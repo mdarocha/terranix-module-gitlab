@@ -1,0 +1,372 @@
+{
+  "gitlab.groups": {
+    "declarations": [
+      {
+        "channelPath": "/module/groups.nix",
+        "path": "module/groups.nix",
+        "url": "https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/groups.nix"
+      }
+    ],
+    "default": {},
+    "description": "Definition of a GitLab group",
+    "loc": [
+      "gitlab",
+      "groups"
+    ],
+    "readOnly": false,
+    "type": "attribute set of submodules"
+  },
+  "gitlab.groups.<name>.description": {
+    "declarations": [
+      {
+        "channelPath": "/module/groups.nix",
+        "path": "module/groups.nix",
+        "url": "https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/groups.nix"
+      }
+    ],
+    "default": "",
+    "description": "The description of the group",
+    "loc": [
+      "gitlab",
+      "groups",
+      "<name>",
+      "description"
+    ],
+    "readOnly": false,
+    "type": "string"
+  },
+  "gitlab.groups.<name>.id": {
+    "declarations": [
+      {
+        "channelPath": "/module/groups.nix",
+        "path": "module/groups.nix",
+        "url": "https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/groups.nix"
+      }
+    ],
+    "default": "${gitlab_group.‹name›.id}",
+    "description": "Terraform reference to the id of the group.\nUsed for convienience when referencing the group in other resources.\nShould not be overriden, the default value should be fine.\n",
+    "loc": [
+      "gitlab",
+      "groups",
+      "<name>",
+      "id"
+    ],
+    "readOnly": false,
+    "type": "string"
+  },
+  "gitlab.groups.<name>.name": {
+    "declarations": [
+      {
+        "channelPath": "/module/groups.nix",
+        "path": "module/groups.nix",
+        "url": "https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/groups.nix"
+      }
+    ],
+    "default": "‹name›",
+    "description": "The name of the group",
+    "loc": [
+      "gitlab",
+      "groups",
+      "<name>",
+      "name"
+    ],
+    "readOnly": false,
+    "type": "string"
+  },
+  "gitlab.groups.<name>.parentId": {
+    "declarations": [
+      {
+        "channelPath": "/module/groups.nix",
+        "path": "module/groups.nix",
+        "url": "https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/groups.nix"
+      }
+    ],
+    "description": "ID of the parent group",
+    "loc": [
+      "gitlab",
+      "groups",
+      "<name>",
+      "parentId"
+    ],
+    "readOnly": false,
+    "type": "string"
+  },
+  "gitlab.groups.<name>.path": {
+    "declarations": [
+      {
+        "channelPath": "/module/groups.nix",
+        "path": "module/groups.nix",
+        "url": "https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/groups.nix"
+      }
+    ],
+    "default": "‹name›",
+    "description": "The path of the group",
+    "loc": [
+      "gitlab",
+      "groups",
+      "<name>",
+      "path"
+    ],
+    "readOnly": false,
+    "type": "string"
+  },
+  "gitlab.groups.<name>.settings": {
+    "declarations": [
+      {
+        "channelPath": "/module/groups.nix",
+        "path": "module/groups.nix",
+        "url": "https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/groups.nix"
+      }
+    ],
+    "default": {},
+    "description": "Any additional settings you may want to set.\nSee the [gitlab_group resource](https://registry.terraform.io/providers/gitlabhq/gitlab/latest/docs/resources/group)\ndocumentation for a list of possible values.\n",
+    "loc": [
+      "gitlab",
+      "groups",
+      "<name>",
+      "settings"
+    ],
+    "readOnly": false,
+    "type": "anything"
+  },
+  "gitlab.projects": {
+    "declarations": [
+      {
+        "channelPath": "/module/projects.nix",
+        "path": "module/projects.nix",
+        "url": "https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/projects.nix"
+      }
+    ],
+    "default": {},
+    "description": "Definition of a GitLab project",
+    "loc": [
+      "gitlab",
+      "projects"
+    ],
+    "readOnly": false,
+    "type": "attribute set of submodules"
+  },
+  "gitlab.projects.<name>.defaultBranch": {
+    "declarations": [
+      {
+        "channelPath": "/module/projects.nix",
+        "path": "module/projects.nix",
+        "url": "https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/projects.nix"
+      }
+    ],
+    "default": "main",
+    "description": "Name of the default branch",
+    "loc": [
+      "gitlab",
+      "projects",
+      "<name>",
+      "defaultBranch"
+    ],
+    "readOnly": false,
+    "type": "string"
+  },
+  "gitlab.projects.<name>.description": {
+    "declarations": [
+      {
+        "channelPath": "/module/projects.nix",
+        "path": "module/projects.nix",
+        "url": "https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/projects.nix"
+      }
+    ],
+    "default": "",
+    "description": "Description of the project",
+    "loc": [
+      "gitlab",
+      "projects",
+      "<name>",
+      "description"
+    ],
+    "readOnly": false,
+    "type": "string"
+  },
+  "gitlab.projects.<name>.id": {
+    "declarations": [
+      {
+        "channelPath": "/module/projects.nix",
+        "path": "module/projects.nix",
+        "url": "https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/projects.nix"
+      }
+    ],
+    "default": "${gitlab_project.‹name›.id}",
+    "description": "Terraform reference to the id of the group.\nUsed for convienience when referencing the group in other resources.\nShould not be overriden, the default value should be fine.\n",
+    "loc": [
+      "gitlab",
+      "projects",
+      "<name>",
+      "id"
+    ],
+    "readOnly": false,
+    "type": "string"
+  },
+  "gitlab.projects.<name>.name": {
+    "declarations": [
+      {
+        "channelPath": "/module/projects.nix",
+        "path": "module/projects.nix",
+        "url": "https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/projects.nix"
+      }
+    ],
+    "default": "‹name›",
+    "description": "Name of the project",
+    "loc": [
+      "gitlab",
+      "projects",
+      "<name>",
+      "name"
+    ],
+    "readOnly": false,
+    "type": "string"
+  },
+  "gitlab.projects.<name>.namespaceId": {
+    "declarations": [
+      {
+        "channelPath": "/module/projects.nix",
+        "path": "module/projects.nix",
+        "url": "https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/projects.nix"
+      }
+    ],
+    "description": "ID of the namespace (user or group) this project should be in.",
+    "loc": [
+      "gitlab",
+      "projects",
+      "<name>",
+      "namespaceId"
+    ],
+    "readOnly": false,
+    "type": "string"
+  },
+  "gitlab.projects.<name>.settings": {
+    "declarations": [
+      {
+        "channelPath": "/module/projects.nix",
+        "path": "module/projects.nix",
+        "url": "https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/projects.nix"
+      }
+    ],
+    "default": {},
+    "description": "Any additional settings you may want to set.\nSee the [gitlab_project resource](https://registry.terraform.io/providers/gitlabhq/gitlab/latest/docs/resources/project)\ndocumentation for a list of possible values.\n",
+    "loc": [
+      "gitlab",
+      "projects",
+      "<name>",
+      "settings"
+    ],
+    "readOnly": false,
+    "type": "anything"
+  },
+  "gitlab.provider.enable": {
+    "declarations": [
+      {
+        "channelPath": "/module/provider.nix",
+        "path": "module/provider.nix",
+        "url": "https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/provider.nix"
+      }
+    ],
+    "default": false,
+    "description": "Whether to enable GitLab provider.",
+    "example": true,
+    "loc": [
+      "gitlab",
+      "provider",
+      "enable"
+    ],
+    "readOnly": false,
+    "type": "boolean"
+  },
+  "gitlab.rootGroup.groupId": {
+    "declarations": [
+      {
+        "channelPath": "/module/root_group.nix",
+        "path": "module/root_group.nix",
+        "url": "https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/root_group.nix"
+      }
+    ],
+    "default": null,
+    "description": "ID of the root group.\n",
+    "loc": [
+      "gitlab",
+      "rootGroup",
+      "groupId"
+    ],
+    "readOnly": false,
+    "type": "null or signed integer"
+  },
+  "gitlab.rootGroup.id": {
+    "declarations": [
+      {
+        "channelPath": "/module/root_group.nix",
+        "path": "module/root_group.nix",
+        "url": "https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/root_group.nix"
+      }
+    ],
+    "default": "${data.gitlab_group.root.id}",
+    "description": "Terraform reference to the id of the group.\nUsed for convienience when referencing the group in other resources.\nShould not be overriden, the default value should be fine.\n",
+    "loc": [
+      "gitlab",
+      "rootGroup",
+      "id"
+    ],
+    "readOnly": false,
+    "type": "string"
+  },
+  "gitlab.users": {
+    "declarations": [
+      {
+        "channelPath": "/module/users.nix",
+        "path": "module/users.nix",
+        "url": "https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/users.nix"
+      }
+    ],
+    "default": {},
+    "description": "Creates data objects for the given users.\nYou can then get a terraform reference to the id of that user\n(for use in group or project options) using the .id option.\n",
+    "loc": [
+      "gitlab",
+      "users"
+    ],
+    "readOnly": false,
+    "type": "attribute set of submodules"
+  },
+  "gitlab.users.<name>.id": {
+    "declarations": [
+      {
+        "channelPath": "/module/users.nix",
+        "path": "module/users.nix",
+        "url": "https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/users.nix"
+      }
+    ],
+    "default": "${data.gitlab_user.‹name›.id}",
+    "description": "Terraform reference to the id of the user.\nUsed for convienience when referencing the user in other resources.\nShould not be overriden, the default value should be fine.\n",
+    "loc": [
+      "gitlab",
+      "users",
+      "<name>",
+      "id"
+    ],
+    "readOnly": false,
+    "type": "string"
+  },
+  "gitlab.users.<name>.username": {
+    "declarations": [
+      {
+        "channelPath": "/module/users.nix",
+        "path": "module/users.nix",
+        "url": "https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/users.nix"
+      }
+    ],
+    "default": "‹name›",
+    "description": "Username of the given user",
+    "loc": [
+      "gitlab",
+      "users",
+      "<name>",
+      "username"
+    ],
+    "readOnly": false,
+    "type": "string"
+  }
+}
