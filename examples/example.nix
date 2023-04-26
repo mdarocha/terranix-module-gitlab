@@ -23,6 +23,10 @@
     user-project = {
       description = "A project owned by a user";
       namespaceId = config.gitlab.users.mdarocha.id;
+      files.example = {
+        filePath = "example.txt";
+        content = "Example of a file creation using terraform";
+      };
     };
   };
 }

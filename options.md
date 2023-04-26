@@ -88,6 +88,46 @@ documentation for a list of possible values.
   <b>description</b>: Description of the project<br>
 </li>
 <li>
+  <b><u>gitlab.projects.&lt;name&gt;.fileCreator.email</u></b><br>
+  <b>type</b>: string<br>
+  <b>default</b>: &#34;&#34;<br>
+  <b>example</b>: null<br>
+  <b>defined</b>: <a href="https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/projects.nix">module/projects.nix</a><br>
+  <b>description</b>: Email of the user that will be visible in commits used to update repository files<br>
+</li>
+<li>
+  <b><u>gitlab.projects.&lt;name&gt;.fileCreator.name</u></b><br>
+  <b>type</b>: string<br>
+  <b>default</b>: &#34;terraform&#34;<br>
+  <b>example</b>: null<br>
+  <b>defined</b>: <a href="https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/projects.nix">module/projects.nix</a><br>
+  <b>description</b>: Name of the user that will be visible in commits used to update repository files<br>
+</li>
+<li>
+  <b><u>gitlab.projects.&lt;name&gt;.files</u></b><br>
+  <b>type</b>: attribute set of submodules<br>
+  <b>default</b>: {}<br>
+  <b>example</b>: null<br>
+  <b>defined</b>: <a href="https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/projects.nix">module/projects.nix</a><br>
+  <b>description</b>: Manage files that should be present in the repository<br>
+</li>
+<li>
+  <b><u>gitlab.projects.&lt;name&gt;.files.&lt;name&gt;.content</u></b><br>
+  <b>type</b>: string<br>
+  <b>default</b>: null<br>
+  <b>example</b>: null<br>
+  <b>defined</b>: <a href="https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/projects.nix">module/projects.nix</a><br>
+  <b>description</b>: Content of the file<br>
+</li>
+<li>
+  <b><u>gitlab.projects.&lt;name&gt;.files.&lt;name&gt;.filePath</u></b><br>
+  <b>type</b>: string<br>
+  <b>default</b>: null<br>
+  <b>example</b>: null<br>
+  <b>defined</b>: <a href="https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/projects.nix">module/projects.nix</a><br>
+  <b>description</b>: Path of the created file inside the repository<br>
+</li>
+<li>
   <b><u>gitlab.projects.&lt;name&gt;.id</u></b><br>
   <b>type</b>: string<br>
   <b>default</b>: &#34;${gitlab_project.‹name›.id}&#34;<br>

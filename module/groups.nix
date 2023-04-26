@@ -41,7 +41,7 @@ in
           description = "ID of the parent group";
         };
         settings = mkOption {
-          default = {};
+          default = { };
           type = anything;
           description = ''
             Any additional settings you may want to set.
@@ -53,9 +53,11 @@ in
     }));
   };
 
-  config.resource."gitlab_group" = mapAttrs (name: values:
-    (values.settings // {
-      inherit (values) name path description;
-      parent_id = values.parentId;
-    })) cfg;
+  config.resource."gitlab_group" = mapAttrs
+    (name: values:
+      (values.settings // {
+        inherit (values) name path description;
+        parent_id = values.parentId;
+      }))
+    cfg;
 }

@@ -184,6 +184,105 @@
     "readOnly": false,
     "type": "string"
   },
+  "gitlab.projects.<name>.fileCreator.email": {
+    "declarations": [
+      {
+        "channelPath": "/module/projects.nix",
+        "path": "module/projects.nix",
+        "url": "https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/projects.nix"
+      }
+    ],
+    "default": "",
+    "description": "Email of the user that will be visible in commits used to update repository files",
+    "loc": [
+      "gitlab",
+      "projects",
+      "<name>",
+      "fileCreator",
+      "email"
+    ],
+    "readOnly": false,
+    "type": "string"
+  },
+  "gitlab.projects.<name>.fileCreator.name": {
+    "declarations": [
+      {
+        "channelPath": "/module/projects.nix",
+        "path": "module/projects.nix",
+        "url": "https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/projects.nix"
+      }
+    ],
+    "default": "terraform",
+    "description": "Name of the user that will be visible in commits used to update repository files",
+    "loc": [
+      "gitlab",
+      "projects",
+      "<name>",
+      "fileCreator",
+      "name"
+    ],
+    "readOnly": false,
+    "type": "string"
+  },
+  "gitlab.projects.<name>.files": {
+    "declarations": [
+      {
+        "channelPath": "/module/projects.nix",
+        "path": "module/projects.nix",
+        "url": "https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/projects.nix"
+      }
+    ],
+    "default": {},
+    "description": "Manage files that should be present in the repository",
+    "loc": [
+      "gitlab",
+      "projects",
+      "<name>",
+      "files"
+    ],
+    "readOnly": false,
+    "type": "attribute set of submodules"
+  },
+  "gitlab.projects.<name>.files.<name>.content": {
+    "declarations": [
+      {
+        "channelPath": "/module/projects.nix",
+        "path": "module/projects.nix",
+        "url": "https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/projects.nix"
+      }
+    ],
+    "description": "Content of the file",
+    "loc": [
+      "gitlab",
+      "projects",
+      "<name>",
+      "files",
+      "<name>",
+      "content"
+    ],
+    "readOnly": false,
+    "type": "string"
+  },
+  "gitlab.projects.<name>.files.<name>.filePath": {
+    "declarations": [
+      {
+        "channelPath": "/module/projects.nix",
+        "path": "module/projects.nix",
+        "url": "https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/projects.nix"
+      }
+    ],
+    "description": "Path of the created file inside the repository",
+    "loc": [
+      "gitlab",
+      "projects",
+      "<name>",
+      "files",
+      "<name>",
+      "filePath"
+    ],
+    "readOnly": false,
+    "type": "string"
+  },
   "gitlab.projects.<name>.id": {
     "declarations": [
       {

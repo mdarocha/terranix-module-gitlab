@@ -40,8 +40,36 @@ in
           type = str;
           description = "Name of the default branch";
         };
+        fileCreator = {
+          name = mkOption {
+            default = "terraform";
+            type = str;
+            description = "Name of the user that will be visible in commits used to update repository files";
+          };
+          email = mkOption {
+            default = "";
+            type = str;
+            description = "Email of the user that will be visible in commits used to update repository files";
+          };
+        };
+        files = mkOption {
+          default = { };
+          description = "Manage files that should be present in the repository";
+          type = attrsOf (submodule ({ name, ... }: {
+            options = {
+              filePath = mkOption {
+                type = str;
+                description = "Path of the created file inside the repository";
+              };
+              content = mkOption {
+                type = str;
+                description = "Content of the file";
+              };
+            };
+          }));
+        };
         settings = mkOption {
-          default = {};
+          default = { };
           type = anything;
           description = ''
             Any additional settings you may want to set.
@@ -60,4 +88,33 @@ in
       default_branch = values.defaultBranch;
     })
     cfg;
+
+  config.resource."gitlab_repository_file" =
+    let
+      projectFiles = projectName: project: map
+        (name:
+          let
+            value = getAttr name project.files;
+          in
+          {
+            name = "${projectName}-${name}";
+            value = {
+              project = "\${gitlab_project.${projectName}.id}";
+              branch = project.defaultBranch;
+              author_name = project.fileCreator.name;
+              author_email = project.fileCreator.email;
+
+              file_path = value.filePath;
+              content = value.content;
+            };
+          })
+        (attrNames project.files);
+    in
+    (listToAttrs (flatten (map
+      (projectName:
+        let
+          project = getAttr projectName cfg;
+        in
+        (projectFiles projectName project))
+      (attrNames cfg))));
 }
