@@ -104,6 +104,7 @@ in
               author_name = project.fileCreator.name;
               author_email = project.fileCreator.email;
 
+              commit_message = "Terraform: keep ${value.filePath} in sync";
               file_path = value.filePath;
               content = value.content;
             };
