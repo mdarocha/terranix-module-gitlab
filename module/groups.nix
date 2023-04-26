@@ -49,6 +49,31 @@ in
             documentation for a list of possible values.
           '';
         };
+        membership = mkOption {
+          default = {};
+          description = "Manage membership of the group";
+          type = attrsOf (submodule ({ name, ... }: {
+            options = {
+              userId = mkOption {
+                type = str;
+                description = "ID of the user to add to the group";
+              };
+              accessLevel = mkOption {
+                type = enum [
+                  "no one"
+                  "minimal"
+                  "guest"
+                  "reporter"
+                  "developer"
+                  "maintainer"
+                  "owner"
+                  "master"
+                ];
+                description = "Access level of the user";
+              };
+            };
+          }));
+        };
       };
     }));
   };
@@ -60,4 +85,26 @@ in
         parent_id = values.parentId;
       }))
     cfg;
+
+  config.resource."gitlab_group_membership" =
+    let
+      groupMembership = groupName: group: map
+        (name:
+          let
+            value = getAttr name group.membership;
+          in
+          {
+            name = "${groupName}-${name}";
+            value = {
+              user_id = value.userId;
+              group_id = group.id;
+              access_level = value.accessLevel;
+            };
+          })
+        (attrNames group.membership);
+      in
+      listToAttrs (flatten (map
+        (groupName: (groupMembership groupName (getAttr groupName cfg)))
+        (attrNames cfg)
+      ));
 }

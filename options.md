@@ -29,6 +29,30 @@ Should not be overriden, the default value should be fine.
 <br>
 </li>
 <li>
+  <b><u>gitlab.groups.&lt;name&gt;.membership</u></b><br>
+  <b>type</b>: attribute set of submodules<br>
+  <b>default</b>: {}<br>
+  <b>example</b>: null<br>
+  <b>defined</b>: <a href="https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/groups.nix">module/groups.nix</a><br>
+  <b>description</b>: Manage membership of the group<br>
+</li>
+<li>
+  <b><u>gitlab.groups.&lt;name&gt;.membership.&lt;name&gt;.accessLevel</u></b><br>
+  <b>type</b>: one of &#34;no one&#34;, &#34;minimal&#34;, &#34;guest&#34;, &#34;reporter&#34;, &#34;developer&#34;, &#34;maintainer&#34;, &#34;owner&#34;, &#34;master&#34;<br>
+  <b>default</b>: null<br>
+  <b>example</b>: null<br>
+  <b>defined</b>: <a href="https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/groups.nix">module/groups.nix</a><br>
+  <b>description</b>: Access level of the user<br>
+</li>
+<li>
+  <b><u>gitlab.groups.&lt;name&gt;.membership.&lt;name&gt;.userId</u></b><br>
+  <b>type</b>: string<br>
+  <b>default</b>: null<br>
+  <b>example</b>: null<br>
+  <b>defined</b>: <a href="https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/groups.nix">module/groups.nix</a><br>
+  <b>description</b>: ID of the user to add to the group<br>
+</li>
+<li>
   <b><u>gitlab.groups.&lt;name&gt;.name</u></b><br>
   <b>type</b>: string<br>
   <b>default</b>: &#34;‹name›&#34;<br>

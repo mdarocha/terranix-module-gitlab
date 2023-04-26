@@ -54,6 +54,65 @@
     "readOnly": false,
     "type": "string"
   },
+  "gitlab.groups.<name>.membership": {
+    "declarations": [
+      {
+        "channelPath": "/module/groups.nix",
+        "path": "module/groups.nix",
+        "url": "https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/groups.nix"
+      }
+    ],
+    "default": {},
+    "description": "Manage membership of the group",
+    "loc": [
+      "gitlab",
+      "groups",
+      "<name>",
+      "membership"
+    ],
+    "readOnly": false,
+    "type": "attribute set of submodules"
+  },
+  "gitlab.groups.<name>.membership.<name>.accessLevel": {
+    "declarations": [
+      {
+        "channelPath": "/module/groups.nix",
+        "path": "module/groups.nix",
+        "url": "https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/groups.nix"
+      }
+    ],
+    "description": "Access level of the user",
+    "loc": [
+      "gitlab",
+      "groups",
+      "<name>",
+      "membership",
+      "<name>",
+      "accessLevel"
+    ],
+    "readOnly": false,
+    "type": "one of \"no one\", \"minimal\", \"guest\", \"reporter\", \"developer\", \"maintainer\", \"owner\", \"master\""
+  },
+  "gitlab.groups.<name>.membership.<name>.userId": {
+    "declarations": [
+      {
+        "channelPath": "/module/groups.nix",
+        "path": "module/groups.nix",
+        "url": "https://github.com/mdarocha/terranix-module-gitlab/tree/main/module/module/groups.nix"
+      }
+    ],
+    "description": "ID of the user to add to the group",
+    "loc": [
+      "gitlab",
+      "groups",
+      "<name>",
+      "membership",
+      "<name>",
+      "userId"
+    ],
+    "readOnly": false,
+    "type": "string"
+  },
   "gitlab.groups.<name>.name": {
     "declarations": [
       {

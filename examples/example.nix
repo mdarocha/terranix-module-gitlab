@@ -10,6 +10,11 @@
   gitlab.groups = {
     example-group = {
       parentId = config.gitlab.rootGroup.id;
+
+      membership.mdarocha = {
+        userId = config.gitlab.users.mdarocha.id;
+        accessLevel = "owner";
+      };
     };
   };
 

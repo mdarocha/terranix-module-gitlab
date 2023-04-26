@@ -99,7 +99,7 @@ in
           {
             name = "${projectName}-${name}";
             value = {
-              project = "\${gitlab_project.${projectName}.id}";
+              project = project.id;
               branch = project.defaultBranch;
               author_name = project.fileCreator.name;
               author_email = project.fileCreator.email;
@@ -110,11 +110,8 @@ in
           })
         (attrNames project.files);
     in
-    (listToAttrs (flatten (map
-      (projectName:
-        let
-          project = getAttr projectName cfg;
-        in
-        (projectFiles projectName project))
-      (attrNames cfg))));
+    listToAttrs (flatten (map
+      (projectName: (projectFiles projectName (getAttr projectName cfg)))
+      (attrNames cfg)
+    ));
 }
