@@ -106,7 +106,10 @@ in
 
               commit_message = "Terraform: keep ${value.filePath} in sync";
               file_path = value.filePath;
-              content = lib.tfRef "filebase64(${pkgs.writeTextFile "${name}-content" value.content})";
+              content = lib.tfRef "filebase64(${pkgs.writeTextFile {
+                name = "${name}-content";
+                text = value.content;
+              }})";
             };
           })
         (attrNames project.files);
